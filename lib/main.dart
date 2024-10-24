@@ -10,6 +10,12 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
+          leading: IconButton(
+            icon: Icon(Icons.chevron_left),
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+          ),
           title: Text(
             'Typical Australian Food',
             style: TextStyle(
@@ -20,53 +26,6 @@ class MyApp extends StatelessWidget {
           backgroundColor: Color(0xFFFFF8E1), // Solid background color
           elevation: 0, // Remove shadow
         ),
-        drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: <Widget>[
-            DrawerHeader(
-              decoration: BoxDecoration(
-                color: Color(0xFFFFD54F),
-              ),
-              child: Text(
-                'Menu',
-                style: TextStyle(
-                  fontSize: 24,
-                ),
-              ),
-            ),
-            ListTile(
-              leading: CircleAvatar(
-                backgroundImage: NetworkImage('https://yt3.googleusercontent.com/ytc/AIdro_ks409etWwleA1ffBszRS-YPdABwr5AIWYoby14_ceA6ck=s900-c-k-c0x00ffffff-no-rj'), // Ganti dengan path gambar Anda
-              ),
-              title: Text('Home'),
-              onTap: () {
-                Navigator.pop(context); // Menutup drawer
-              },
-            ),
-            ListTile(
-              leading: CircleAvatar(
-                backgroundImage: NetworkImage('https://www.shutterstock.com/image-vector/setting-icon-vector-gear-cog-260nw-1211635549.jpg'), // Ganti dengan path gambar Anda
-              ),
-              title: Text('Settings'),
-              onTap: () {
-                // Tambahkan logika untuk mengalihkan ke halaman pengaturan
-                Navigator.pop(context); // Menutup drawer
-              },
-            ),
-            ListTile(
-              leading: CircleAvatar(
-                backgroundImage: NetworkImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhAf8WRjqW2PdlP759JsSkGqH-qKq6nUIdAf4CnbdlmAtLUAqJ9s3dZmayQ8kWhc33W-I&usqp=CAU'), // Ganti dengan path gambar Anda
-              ),
-              title: Text('About'),
-              onTap: () {
-                // Tambahkan logika untuk mengalihkan ke halaman tentang
-                Navigator.pop(context); // Menutup drawer
-              },
-            ),
-          ],
-        ),
-      ),
         body: SafeArea(
           child: Container(
             decoration: BoxDecoration(
